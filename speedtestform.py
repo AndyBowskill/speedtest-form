@@ -15,7 +15,7 @@ class SpeedTestForm:
         master.title('Speed Test')
         master.geometry('350x250')
         master.attributes('-fullscreen', True)
-        master.config(bg='black')
+        master.config(bg='black', cursor='none')
 
         form_font = font.Font(family='Arial', size=24, weight=font.NORMAL)
         orange_code = '#dd5202'
