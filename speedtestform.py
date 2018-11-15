@@ -3,6 +3,7 @@
 
 import subprocess
 import socket
+import os
 
 from tkinter import *
 from tkinter import font
@@ -26,21 +27,26 @@ class SpeedTestForm:
         self.network_text = StringVar()
         self.network_text.set('')
 
+        self.check_network_button = Button(master, text='Check Network', font=form_font, command=lambda: self.check_network())
+        self.check_network_button.config(fg=orange_code, bg='black')
+        self.check_network_button.pack(padx=0, pady=20, fill=BOTH)
+
         self.ip_label = Label(master, font=form_font, textvariable=self.ip_text)
         self.ip_label.config(fg=orange_code, bg='black')
-        self.ip_label.pack(padx=0, pady=10, fill=X)
+        self.ip_label.pack(padx=0, pady=0, fill=X)
 
         self.network_label = Label(master, font=form_font, textvariable=self.network_text)
         self.network_label.config(fg=orange_code, bg='black', height=4)
-        self.network_label.pack(padx=0, pady=6, fill=X)
+        self.network_label.pack(padx=0, pady=0, fill=X)
 
-        self.check_button = Button(master, text='Check Network', font=form_font, command=lambda: self.check_network())
-        self.check_button.config(fg=orange_code, bg='black')
-        self.check_button.pack(padx=0, pady=10, fill=BOTH)
+        self.power_off_button = Button(master, text='Power Off', font=form_font, command=lambda: self.power_off())
+        self.power_off_button.config(fg=orange_code, bg='black')
+        self.power_off_button.pack(padx=0, pady=0, fill=BOTH)
 
     def check_network(self):
         self.network_text.set('Checking...')
-        self.check_button.config(state=DISABLED)
+        self.check_network_button.config(state=DISABLED)
+        self.power_off_button.config(state=DISABLED)
 
         self.ip_text.set(self.read_ip())
 
@@ -51,9 +57,13 @@ class SpeedTestForm:
                 response_string = 'No network found.'
 
             self.network_text.set(response_string)
-            self.check_button.config(state=NORMAL)
+            self.check_network_button.config(state=NORMAL)
+            self.power_off_button.config(state=NORMAL)
 
         self.master.after(500, run_speedtest)
+
+    def power_off(self):
+        os.system("shutdown now -h")
 
     @staticmethod
     def read_ip():

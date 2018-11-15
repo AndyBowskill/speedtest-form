@@ -1,3 +1,4 @@
 #!/bin/bash
 export DISPLAY=:0.0
-/usr/bin/python3 /home/pi/speedtest/speedtestform.py
+sleep 3
+sudo /usr/bin/python3 /home/pi/speedtest/speedtestform.py
