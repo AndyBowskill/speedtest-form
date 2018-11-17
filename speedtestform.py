@@ -18,7 +18,7 @@ class SpeedTestForm:
         master.attributes('-fullscreen', True)
         master.config(bg='black', cursor='none')
 
-        form_font = font.Font(family='Arial', size=24, weight=font.NORMAL)
+        form_font = font.Font(family='Arial', size=20, weight=font.BOLD)
         orange_code = '#dd5202'
 
         self.ip_text = StringVar()
@@ -29,7 +29,7 @@ class SpeedTestForm:
 
         self.check_network_button = Button(master, text='Check Network', font=form_font, command=lambda: self.check_network())
         self.check_network_button.config(fg=orange_code, bg='black')
-        self.check_network_button.pack(padx=0, pady=20, fill=BOTH)
+        self.check_network_button.pack(padx=0, pady=30, fill=BOTH)
 
         self.ip_label = Label(master, font=form_font, textvariable=self.ip_text)
         self.ip_label.config(fg=orange_code, bg='black')
