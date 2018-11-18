@@ -9,3 +9,9 @@ Install speedtest-cli:
 ```
 sudo pip install speedtest-cli
 ```
+
+### Install
+```
+$ git clone https://github.com/AndyBowskill/speedtest-form.git
+```
+
