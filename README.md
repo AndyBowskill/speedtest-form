@@ -2,14 +2,14 @@
 
 A graphical user interface for [speedtest-cli](https://github.com/sivel/speedtest-cli) hosted on a Raspberry Pi.
 
-### Prerequisites
+## Prerequisites
 
 Install speedtest-cli:
 ```
 sudo pip install speedtest-cli
 ```
 
-### Install
+## Install
 
 Make sure you are in:
 ```
