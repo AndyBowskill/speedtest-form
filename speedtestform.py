@@ -14,7 +14,7 @@ class SpeedTestForm:
         self.master = master
 
         master.title('Speed Test')
-        master.geometry('350x250')
+        master.geometry('480x320')
         master.attributes('-fullscreen', True)
         master.config(bg='black', cursor='none')
 
